@@ -159,38 +159,38 @@ export default function Home() {
   if (step === "login") {
     return (
       <div className="min-h-screen bg-indigo-50 flex flex-col items-center justify-center p-4 font-sans text-center">
-        <div className="w-full max-w-4xl bg-white p-12 rounded-3xl shadow-xl space-y-10 mx-auto">
-          <h1 className="font-extrabold text-indigo-600 mb-4 text-center" style={{ fontSize: 'clamp(2.5rem, 4vw, 5rem)' }}>
+        <div className="w-full max-w-4xl bg-white p-8 sm:p-12 rounded-3xl shadow-xl flex flex-col items-center justify-center space-y-10 mx-auto">
+          <h1 className="font-extrabold text-indigo-600 mb-4 text-center w-full" style={{ fontSize: 'clamp(2.5rem, 4vw, 5rem)' }}>
             Logic Korean
           </h1>
-          <p className="text-gray-500 text-center" style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
+          <p className="text-gray-500 text-center w-full" style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
             Enter your name to start the quiz.
           </p>
           
-          <div className="flex justify-center w-full">
+          <div className="w-full flex justify-center">
             <input
               type="text"
               placeholder="Your Name"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
-              className="w-full px-6 py-5 border-2 border-gray-300 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-200 focus:border-indigo-500 text-center transition-all"
+              className="w-full max-w-lg px-6 py-5 border-2 border-gray-300 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-200 focus:border-indigo-500 text-center transition-all"
               style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
               onKeyDown={(e) => e.key === "Enter" && handleStartQuiz()}
             />
           </div>
           
-          <div className="flex justify-center w-full">
+          <div className="w-full flex justify-center">
             <button
               onClick={handleStartQuiz}
               disabled={!userName.trim()}
-              className="w-full bg-indigo-600 text-white py-5 px-6 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
+              className="w-full max-w-lg bg-indigo-600 text-white py-5 px-6 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
               style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
             >
               Start Quiz →
             </button>
           </div>
           
-          <p className="text-gray-400 mt-6 text-center" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)' }}>
+          <p className="text-gray-400 mt-6 text-center w-full" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)' }}>
             Total {quizItems.length} questions available.<br/>
             You will solve 20 random questions.
           </p>
@@ -203,28 +203,28 @@ export default function Home() {
   if (step === "result") {
     return (
       <div className="min-h-screen bg-indigo-50 flex flex-col items-center justify-center p-4 font-sans text-center">
-        <div className="w-full max-w-4xl bg-white p-12 rounded-3xl shadow-xl space-y-10 animate-fade-in mx-auto">
-          <div className="mb-6 flex justify-center" style={{ fontSize: 'clamp(4rem, 8vw, 8rem)' }}>🏆</div>
-          <h2 className="font-bold text-gray-800 text-center" style={{ fontSize: 'clamp(2rem, 4vw, 4rem)' }}>
+        <div className="w-full max-w-4xl bg-white p-8 sm:p-12 rounded-3xl shadow-xl flex flex-col items-center justify-center space-y-10 animate-fade-in mx-auto">
+          <div className="mb-6 flex justify-center w-full" style={{ fontSize: 'clamp(4rem, 8vw, 8rem)' }}>🏆</div>
+          <h2 className="font-bold text-gray-800 text-center w-full" style={{ fontSize: 'clamp(2rem, 4vw, 4rem)' }}>
             Quiz Completed!
           </h2>
-          <p className="text-gray-500 text-center" style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)' }}>
+          <p className="text-gray-500 text-center w-full" style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)' }}>
             Good job, <span className="font-bold text-indigo-600">{userName}</span>!
           </p>
           
-          <div className="bg-indigo-50 p-10 rounded-2xl border-2 border-indigo-100 my-8">
-            <div className="text-gray-500 uppercase tracking-widest font-bold mb-2 text-center" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1.2rem)' }}>
+          <div className="bg-indigo-50 p-10 rounded-2xl border-2 border-indigo-100 my-8 w-full max-w-2xl mx-auto flex flex-col items-center justify-center">
+            <div className="text-gray-500 uppercase tracking-widest font-bold mb-2 text-center w-full" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1.2rem)' }}>
               Your Score
             </div>
-            <div className="font-extrabold text-indigo-600 text-center" style={{ fontSize: 'clamp(3rem, 6vw, 6rem)' }}>
+            <div className="font-extrabold text-indigo-600 text-center w-full" style={{ fontSize: 'clamp(3rem, 6vw, 6rem)' }}>
               {score} <span className="text-gray-400" style={{ fontSize: 'clamp(1.5rem, 3vw, 3rem)' }}>/ {quizItems.length}</span>
             </div>
           </div>
           
-          <div className="flex justify-center w-full">
+          <div className="w-full flex justify-center">
             <button
               onClick={handleRestart}
-              className="w-full bg-white border-2 border-indigo-600 text-indigo-600 py-5 px-6 rounded-2xl font-bold hover:bg-indigo-50 transition-colors flex items-center justify-center"
+              className="w-full max-w-lg bg-white border-2 border-indigo-600 text-indigo-600 py-5 px-6 rounded-2xl font-bold hover:bg-indigo-50 transition-colors flex items-center justify-center"
               style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
             >
               Try Again ↺
@@ -242,10 +242,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8 font-sans text-center">
-      <div className="w-full max-w-5xl space-y-8 bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100 min-h-[80vh] flex flex-col justify-center mx-auto">
+      <div className="w-full max-w-5xl bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100 min-h-[80vh] flex flex-col justify-center items-center mx-auto space-y-8">
         
         {/* Header */}
-        <div className="flex justify-between items-center text-gray-500 font-medium" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.2rem)' }}>
+        <div className="w-full flex justify-between items-center text-gray-500 font-medium" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.2rem)' }}>
           <span className="font-bold text-indigo-600">{userName}</span>
           <span>{currentQuestionIndex + 1} / {quizItems.length}</span>
         </div>
@@ -260,7 +260,7 @@ export default function Home() {
 
         {/* Question Area */}
         <div className="py-4 space-y-6 flex-grow flex flex-col justify-center items-center w-full">
-          <div className="uppercase tracking-widest text-gray-400 font-bold text-center" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1.2rem)' }}>
+          <div className="uppercase tracking-widest text-gray-400 font-bold text-center w-full" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1.2rem)' }}>
             {currentQuestion.category}
           </div>
           <div className="text-gray-700 font-medium text-center w-full" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
@@ -311,10 +311,10 @@ export default function Home() {
         {/* Feedback / Explanation */}
         {showExplanation && (
           <div className={`mt-6 p-6 rounded-2xl border-l-8 animate-fade-in shadow-sm w-full ${isCorrect ? "bg-green-50 border-green-500" : "bg-red-50 border-red-500"}`}>
-            <h3 className={`font-bold mb-2 text-center ${isCorrect ? "text-green-800" : "text-red-800"}`} style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)' }}>
+            <h3 className={`font-bold mb-2 text-center w-full ${isCorrect ? "text-green-800" : "text-red-800"}`} style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)' }}>
               {isCorrect ? "Correct! 🎉" : "Incorrect"}
             </h3>
-            <p className="text-gray-700 leading-relaxed text-center" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.5rem)' }}>
+            <p className="text-gray-700 leading-relaxed text-center w-full" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.5rem)' }}>
               {currentQuestion.explanation}
             </p>
           </div>
@@ -325,7 +325,7 @@ export default function Home() {
           <div className="mt-6 pt-2 w-full flex justify-center">
             <button
               onClick={handleNext}
-              className="w-full bg-indigo-600 text-white py-5 px-6 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-1 transition-all focus:outline-none focus:ring-4 focus:ring-indigo-300 animate-bounce-subtle flex items-center justify-center"
+              className="w-full max-w-lg bg-indigo-600 text-white py-5 px-6 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-1 transition-all focus:outline-none focus:ring-4 focus:ring-indigo-300 animate-bounce-subtle flex items-center justify-center"
               style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
             >
               {currentQuestionIndex < quizItems.length - 1 ? "Next Question →" : "Finish Quiz 🏁"}
