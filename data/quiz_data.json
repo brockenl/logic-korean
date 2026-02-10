@@ -1,0 +1,1402 @@
+[
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the computer, it is nice.",
+    "korean": "컴퓨터___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'컴퓨터' ends in a vowel, so we use the topic marker '는'.",
+    "id": 1
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The coffee exists.",
+    "korean": "커피___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'커피' ends in a vowel, so we use the subject marker '가'.",
+    "id": 2
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) watches the teacher.",
+    "korean": "선생님___ 봐요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'선생님' ends in a consonant, so we use the object marker '을'.",
+    "id": 3
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to home.",
+    "korean": "집___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 4
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) meets at the office.",
+    "korean": "회사___ 만나요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 5
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the house, it is nice.",
+    "korean": "집___ 좋아요.",
+    "answer": "은",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'집' ends in a consonant, so we use the topic marker '은'.",
+    "id": 6
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The car exists.",
+    "korean": "차___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'차' ends in a vowel, so we use the subject marker '가'.",
+    "id": 7
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) watches the bus.",
+    "korean": "버스___ 봐요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'버스' ends in a vowel, so we use the object marker '를'.",
+    "id": 8
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to cafe.",
+    "korean": "카페___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 9
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) buys at the office.",
+    "korean": "회사___ 사요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 10
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the bus, it is nice.",
+    "korean": "버스___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'버스' ends in a vowel, so we use the topic marker '는'.",
+    "id": 11
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The banana exists.",
+    "korean": "바나나___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'바나나' ends in a vowel, so we use the subject marker '가'.",
+    "id": 12
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) drinks the car.",
+    "korean": "차___ 마셔요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'차' ends in a vowel, so we use the object marker '를'.",
+    "id": 13
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to library.",
+    "korean": "도서관___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 14
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) eats at the restaurant.",
+    "korean": "식당___ 먹어요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 15
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the student, it is nice.",
+    "korean": "학생___ 좋아요.",
+    "answer": "은",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'학생' ends in a consonant, so we use the topic marker '은'.",
+    "id": 16
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The banana exists.",
+    "korean": "바나나___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'바나나' ends in a vowel, so we use the subject marker '가'.",
+    "id": 17
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) eats the teacher.",
+    "korean": "선생님___ 먹어요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'선생님' ends in a consonant, so we use the object marker '을'.",
+    "id": 18
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to restaurant.",
+    "korean": "식당___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 19
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) studies at the park.",
+    "korean": "공원___ 공부해요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 20
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the computer, it is nice.",
+    "korean": "컴퓨터___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'컴퓨터' ends in a vowel, so we use the topic marker '는'.",
+    "id": 21
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The student exists.",
+    "korean": "학생___ 있어요.",
+    "answer": "이",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'학생' ends in a consonant, so we use the subject marker '이'.",
+    "id": 22
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) goes the coffee.",
+    "korean": "커피___ 가요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'커피' ends in a vowel, so we use the object marker '를'.",
+    "id": 23
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to school.",
+    "korean": "학교___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 24
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) buys at the home.",
+    "korean": "집___ 사요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 25
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the kimchi, it is nice.",
+    "korean": "김치___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'김치' ends in a vowel, so we use the topic marker '는'.",
+    "id": 26
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The banana exists.",
+    "korean": "바나나___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'바나나' ends in a vowel, so we use the subject marker '가'.",
+    "id": 27
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) drinks the friend.",
+    "korean": "친구___ 마셔요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'친구' ends in a vowel, so we use the object marker '를'.",
+    "id": 28
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to office.",
+    "korean": "회사___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 29
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) reads at the school.",
+    "korean": "학교___ 읽어요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 30
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the water, it is nice.",
+    "korean": "물___ 좋아요.",
+    "answer": "은",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'물' ends in a consonant, so we use the topic marker '은'.",
+    "id": 31
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The car exists.",
+    "korean": "차___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'차' ends in a vowel, so we use the subject marker '가'.",
+    "id": 32
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) studies the friend.",
+    "korean": "친구___ 공부해요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'친구' ends in a vowel, so we use the object marker '를'.",
+    "id": 33
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to office.",
+    "korean": "회사___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 34
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) reads at the library.",
+    "korean": "도서관___ 읽어요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 35
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the house, it is nice.",
+    "korean": "집___ 좋아요.",
+    "answer": "은",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'집' ends in a consonant, so we use the topic marker '은'.",
+    "id": 36
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The apple exists.",
+    "korean": "사과___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'사과' ends in a vowel, so we use the subject marker '가'.",
+    "id": 37
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) drinks the book.",
+    "korean": "책___ 마셔요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'책' ends in a consonant, so we use the object marker '을'.",
+    "id": 38
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to library.",
+    "korean": "도서관___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 39
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) buys at the cafe.",
+    "korean": "카페___ 사요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 40
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the coffee, it is nice.",
+    "korean": "커피___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'커피' ends in a vowel, so we use the topic marker '는'.",
+    "id": 41
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The chair exists.",
+    "korean": "의자___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'의자' ends in a vowel, so we use the subject marker '가'.",
+    "id": 42
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) reads the chair.",
+    "korean": "의자___ 읽어요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'의자' ends in a vowel, so we use the object marker '를'.",
+    "id": 43
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to restaurant.",
+    "korean": "식당___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 44
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) waits for at the office.",
+    "korean": "회사___ 기다려요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 45
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the chair, it is nice.",
+    "korean": "의자___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'의자' ends in a vowel, so we use the topic marker '는'.",
+    "id": 46
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The subway exists.",
+    "korean": "지하철___ 있어요.",
+    "answer": "이",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'지하철' ends in a consonant, so we use the subject marker '이'.",
+    "id": 47
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) meets the coffee.",
+    "korean": "커피___ 만나요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'커피' ends in a vowel, so we use the object marker '를'.",
+    "id": 48
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to school.",
+    "korean": "학교___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 49
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) reads at the restaurant.",
+    "korean": "식당___ 읽어요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 50
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the coffee, it is nice.",
+    "korean": "커피___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'커피' ends in a vowel, so we use the topic marker '는'.",
+    "id": 51
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The bus exists.",
+    "korean": "버스___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'버스' ends in a vowel, so we use the subject marker '가'.",
+    "id": 52
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) meets the apple.",
+    "korean": "사과___ 만나요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'사과' ends in a vowel, so we use the object marker '를'.",
+    "id": 53
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to library.",
+    "korean": "도서관___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 54
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) buys at the school.",
+    "korean": "학교___ 사요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 55
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the banana, it is nice.",
+    "korean": "바나나___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'바나나' ends in a vowel, so we use the topic marker '는'.",
+    "id": 56
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The subway exists.",
+    "korean": "지하철___ 있어요.",
+    "answer": "이",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'지하철' ends in a consonant, so we use the subject marker '이'.",
+    "id": 57
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) watches the subway.",
+    "korean": "지하철___ 봐요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'지하철' ends in a consonant, so we use the object marker '을'.",
+    "id": 58
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to office.",
+    "korean": "회사___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 59
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) reads at the restaurant.",
+    "korean": "식당___ 읽어요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 60
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the school, it is nice.",
+    "korean": "학교___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'학교' ends in a vowel, so we use the topic marker '는'.",
+    "id": 61
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The apple exists.",
+    "korean": "사과___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'사과' ends in a vowel, so we use the subject marker '가'.",
+    "id": 62
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) watches the subway.",
+    "korean": "지하철___ 봐요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'지하철' ends in a consonant, so we use the object marker '을'.",
+    "id": 63
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to office.",
+    "korean": "회사___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 64
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) studies at the library.",
+    "korean": "도서관___ 공부해요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 65
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the student, it is nice.",
+    "korean": "학생___ 좋아요.",
+    "answer": "은",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'학생' ends in a consonant, so we use the topic marker '은'.",
+    "id": 66
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The friend exists.",
+    "korean": "친구___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'친구' ends in a vowel, so we use the subject marker '가'.",
+    "id": 67
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) reads the pen.",
+    "korean": "펜___ 읽어요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'펜' ends in a consonant, so we use the object marker '을'.",
+    "id": 68
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to home.",
+    "korean": "집___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 69
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) studies at the cafe.",
+    "korean": "카페___ 공부해요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 70
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the apple, it is nice.",
+    "korean": "사과___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'사과' ends in a vowel, so we use the topic marker '는'.",
+    "id": 71
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The book exists.",
+    "korean": "책___ 있어요.",
+    "answer": "이",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'책' ends in a consonant, so we use the subject marker '이'.",
+    "id": 72
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) reads the rice.",
+    "korean": "밥___ 읽어요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'밥' ends in a consonant, so we use the object marker '을'.",
+    "id": 73
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to library.",
+    "korean": "도서관___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 74
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) buys at the library.",
+    "korean": "도서관___ 사요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 75
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the friend, it is nice.",
+    "korean": "친구___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'친구' ends in a vowel, so we use the topic marker '는'.",
+    "id": 76
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The apple exists.",
+    "korean": "사과___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'사과' ends in a vowel, so we use the subject marker '가'.",
+    "id": 77
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) goes the chair.",
+    "korean": "의자___ 가요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'의자' ends in a vowel, so we use the object marker '를'.",
+    "id": 78
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to library.",
+    "korean": "도서관___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 79
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) drinks at the cafe.",
+    "korean": "카페___ 마셔요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 80
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the coffee, it is nice.",
+    "korean": "커피___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'커피' ends in a vowel, so we use the topic marker '는'.",
+    "id": 81
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The computer exists.",
+    "korean": "컴퓨터___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'컴퓨터' ends in a vowel, so we use the subject marker '가'.",
+    "id": 82
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) likes the car.",
+    "korean": "차___ 좋아해요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'차' ends in a vowel, so we use the object marker '를'.",
+    "id": 83
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to cafe.",
+    "korean": "카페___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 84
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) likes at the restaurant.",
+    "korean": "식당___ 좋아해요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 85
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the computer, it is nice.",
+    "korean": "컴퓨터___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'컴퓨터' ends in a vowel, so we use the topic marker '는'.",
+    "id": 86
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The rice exists.",
+    "korean": "밥___ 있어요.",
+    "answer": "이",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'밥' ends in a consonant, so we use the subject marker '이'.",
+    "id": 87
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) eats the apple.",
+    "korean": "사과___ 먹어요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'사과' ends in a vowel, so we use the object marker '를'.",
+    "id": 88
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to restaurant.",
+    "korean": "식당___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 89
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) reads at the office.",
+    "korean": "회사___ 읽어요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 90
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the kimchi, it is nice.",
+    "korean": "김치___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'김치' ends in a vowel, so we use the topic marker '는'.",
+    "id": 91
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The cat exists.",
+    "korean": "고양이___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'고양이' ends in a vowel, so we use the subject marker '가'.",
+    "id": 92
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) meets the student.",
+    "korean": "학생___ 만나요.",
+    "answer": "을",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'학생' ends in a consonant, so we use the object marker '을'.",
+    "id": 93
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to park.",
+    "korean": "공원___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 94
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) waits for at the office.",
+    "korean": "회사___ 기다려요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 95
+  },
+  {
+    "category": "Topic Particle (은/는)",
+    "question": "As for the car, it is nice.",
+    "korean": "차___ 좋아요.",
+    "answer": "는",
+    "options": [
+      "은",
+      "는",
+      "이",
+      "가"
+    ],
+    "explanation": "'차' ends in a vowel, so we use the topic marker '는'.",
+    "id": 96
+  },
+  {
+    "category": "Subject Particle (이/가)",
+    "question": "The bus exists.",
+    "korean": "버스___ 있어요.",
+    "answer": "가",
+    "options": [
+      "이",
+      "가",
+      "을",
+      "를"
+    ],
+    "explanation": "'버스' ends in a vowel, so we use the subject marker '가'.",
+    "id": 97
+  },
+  {
+    "category": "Object Particle (을/를)",
+    "question": "(I) eats the kimchi.",
+    "korean": "김치___ 먹어요.",
+    "answer": "를",
+    "options": [
+      "을",
+      "를",
+      "이",
+      "가"
+    ],
+    "explanation": "'김치' ends in a vowel, so we use the object marker '를'.",
+    "id": 98
+  },
+  {
+    "category": "Location Particle (에)",
+    "question": "(I) go to restaurant.",
+    "korean": "식당___ 가요.",
+    "answer": "에",
+    "options": [
+      "에",
+      "에서",
+      "부터",
+      "까지"
+    ],
+    "explanation": "'에' indicates the destination or static location.",
+    "id": 99
+  },
+  {
+    "category": "Action Location (에서)",
+    "question": "(I) drinks at the library.",
+    "korean": "도서관___ 마셔요.",
+    "answer": "에서",
+    "options": [
+      "에",
+      "에서",
+      "으로",
+      "와"
+    ],
+    "explanation": "'에서' indicates the location where an action takes place.",
+    "id": 100
+  }
+]
