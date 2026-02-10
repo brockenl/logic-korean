@@ -60,7 +60,6 @@ export default function Home() {
             if (parsedData.length === 0) {
               setError("No quiz data found in the spreadsheet.");
             } else {
-              // Shuffle and pick 20 questions
               const shuffled = parsedData.sort(() => 0.5 - Math.random());
               setQuizItems(shuffled.slice(0, 20));
             }
@@ -116,166 +115,209 @@ export default function Home() {
 
   const finishQuiz = async () => {
     setStep("result");
-    
-    // Send score to Google Sheet via Apps Script
     try {
       await fetch(SCORE_API_URL, {
         method: "POST",
-        mode: "no-cors", // Required for Google Apps Script Web App
-        headers: {
-          "Content-Type": "application/json",
-        },
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: userName,
           score: score,
           date: new Date().toISOString()
         })
       });
-      console.log("Score submitted successfully!");
     } catch (err) {
       console.error("Failed to submit score:", err);
-      // Don't show error to user, just log it. The result is still shown locally.
     }
   };
 
   const handleRestart = () => {
-    window.location.reload(); // Simple way to reset state and fetch new random questions
+    window.location.reload();
   };
 
-  // Loading / Error UI
-  if (loading) return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-indigo-500"></div>
-    </div>
-  );
+  // --- Inline CSS Styles (No Tailwind Dependency) ---
+  const styles = {
+    container: {
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'column' as const,
+      alignItems: 'center',
+      justifyContent: 'center',
+      backgroundColor: '#EEF2FF', // indigo-50
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif',
+      padding: '20px',
+      textAlign: 'center' as const,
+    },
+    card: {
+      backgroundColor: 'white',
+      padding: '40px',
+      borderRadius: '24px',
+      boxShadow: '0 10px 25px rgba(0,0,0,0.1)',
+      maxWidth: '600px',
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'column' as const,
+      alignItems: 'center',
+      gap: '20px',
+    },
+    title: {
+      color: '#4F46E5', // indigo-600
+      fontSize: 'clamp(2rem, 5vw, 3rem)',
+      fontWeight: '800',
+      marginBottom: '10px',
+    },
+    text: {
+      color: '#6B7280', // gray-500
+      fontSize: 'clamp(1rem, 2vw, 1.2rem)',
+    },
+    input: {
+      width: '100%',
+      padding: '16px',
+      fontSize: '1.2rem',
+      borderRadius: '12px',
+      border: '2px solid #D1D5DB', // gray-300
+      textAlign: 'center' as const,
+      outline: 'none',
+    },
+    button: {
+      width: '100%',
+      backgroundColor: '#4F46E5', // indigo-600
+      color: 'white',
+      padding: '16px',
+      fontSize: '1.2rem',
+      fontWeight: 'bold',
+      borderRadius: '12px',
+      border: 'none',
+      cursor: 'pointer',
+      marginTop: '10px',
+      transition: 'background-color 0.2s',
+    },
+    buttonDisabled: {
+      backgroundColor: '#A5B4FC', // indigo-300
+      cursor: 'not-allowed',
+    },
+    optionGrid: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: '12px',
+      width: '100%',
+    },
+    optionButton: {
+      padding: '20px',
+      fontSize: '1.2rem',
+      fontWeight: 'bold',
+      borderRadius: '16px',
+      border: '2px solid #E5E7EB', // gray-200
+      backgroundColor: 'white',
+      cursor: 'pointer',
+      transition: 'all 0.2s',
+    },
+    correct: { backgroundColor: '#DCFCE7', borderColor: '#22C55E', color: '#15803D' }, // green
+    incorrect: { backgroundColor: '#FEE2E2', borderColor: '#EF4444', color: '#B91C1C' }, // red
+    koreanBox: {
+      backgroundColor: '#EEF2FF',
+      padding: '30px',
+      borderRadius: '16px',
+      fontSize: 'clamp(1.5rem, 4vw, 2.5rem)',
+      fontWeight: 'bold',
+      color: '#1F2937',
+      width: '100%',
+      border: '2px solid #E0E7FF',
+    },
+    progressBar: {
+      width: '100%',
+      height: '10px',
+      backgroundColor: '#E5E7EB',
+      borderRadius: '5px',
+      overflow: 'hidden',
+    },
+    progressFill: {
+      height: '100%',
+      backgroundColor: '#4F46E5',
+      transition: 'width 0.3s ease',
+    }
+  };
 
-  if (error) return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 text-red-500 font-bold p-4 text-center text-xl">
-      Error: {error}
-    </div>
-  );
+  if (loading) return <div style={styles.container}>Loading...</div>;
+  if (error) return <div style={styles.container}><span style={{color:'red'}}>{error}</span></div>;
 
-  // 1. Login Screen
+  // 1. Login
   if (step === "login") {
     return (
-      <div className="min-h-screen bg-indigo-50 flex flex-col items-center justify-center p-4 font-sans text-center">
-        <div className="w-full max-w-4xl bg-white p-8 sm:p-12 rounded-3xl shadow-xl flex flex-col items-center justify-center space-y-10 mx-auto">
-          <h1 className="font-extrabold text-indigo-600 mb-4 text-center w-full" style={{ fontSize: 'clamp(2.5rem, 4vw, 5rem)' }}>
-            Logic Korean
-          </h1>
-          <p className="text-gray-500 text-center w-full" style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
-            Enter your name to start the quiz.
-          </p>
-          
-          <div className="w-full flex justify-center">
-            <input
-              type="text"
-              placeholder="Your Name"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              className="w-full max-w-lg px-6 py-5 border-2 border-gray-300 rounded-2xl focus:outline-none focus:ring-4 focus:ring-indigo-200 focus:border-indigo-500 text-center transition-all"
-              style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
-              onKeyDown={(e) => e.key === "Enter" && handleStartQuiz()}
-            />
-          </div>
-          
-          <div className="w-full flex justify-center">
-            <button
-              onClick={handleStartQuiz}
-              disabled={!userName.trim()}
-              className="w-full max-w-lg bg-indigo-600 text-white py-5 px-6 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center"
-              style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
-            >
-              Start Quiz →
-            </button>
-          </div>
-          
-          <p className="text-gray-400 mt-6 text-center w-full" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1rem)' }}>
-            Total {quizItems.length} questions available.<br/>
-            You will solve 20 random questions.
-          </p>
+      <div style={styles.container}>
+        <div style={styles.card}>
+          <h1 style={styles.title}>Logic Korean</h1>
+          <p style={styles.text}>Enter your name to start.</p>
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={userName}
+            onChange={(e) => setUserName(e.target.value)}
+            style={styles.input}
+          />
+          <button
+            onClick={handleStartQuiz}
+            disabled={!userName.trim()}
+            style={{...styles.button, ...(userName.trim() ? {} : styles.buttonDisabled)}}
+          >
+            Start Quiz
+          </button>
         </div>
       </div>
     );
   }
 
-  // 2. Result Screen
+  // 2. Result
   if (step === "result") {
     return (
-      <div className="min-h-screen bg-indigo-50 flex flex-col items-center justify-center p-4 font-sans text-center">
-        <div className="w-full max-w-4xl bg-white p-8 sm:p-12 rounded-3xl shadow-xl flex flex-col items-center justify-center space-y-10 animate-fade-in mx-auto">
-          <div className="mb-6 flex justify-center w-full" style={{ fontSize: 'clamp(4rem, 8vw, 8rem)' }}>🏆</div>
-          <h2 className="font-bold text-gray-800 text-center w-full" style={{ fontSize: 'clamp(2rem, 4vw, 4rem)' }}>
-            Quiz Completed!
-          </h2>
-          <p className="text-gray-500 text-center w-full" style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)' }}>
-            Good job, <span className="font-bold text-indigo-600">{userName}</span>!
-          </p>
-          
-          <div className="bg-indigo-50 p-10 rounded-2xl border-2 border-indigo-100 my-8 w-full max-w-2xl mx-auto flex flex-col items-center justify-center">
-            <div className="text-gray-500 uppercase tracking-widest font-bold mb-2 text-center w-full" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1.2rem)' }}>
-              Your Score
-            </div>
-            <div className="font-extrabold text-indigo-600 text-center w-full" style={{ fontSize: 'clamp(3rem, 6vw, 6rem)' }}>
-              {score} <span className="text-gray-400" style={{ fontSize: 'clamp(1.5rem, 3vw, 3rem)' }}>/ {quizItems.length}</span>
-            </div>
+      <div style={styles.container}>
+        <div style={styles.card}>
+          <div style={{fontSize: '4rem'}}>🏆</div>
+          <h2 style={styles.title}>Quiz Completed!</h2>
+          <p style={styles.text}>Good job, <b>{userName}</b>!</p>
+          <div style={{...styles.koreanBox, fontSize: '2rem'}}>
+            Score: {score} / {quizItems.length}
           </div>
-          
-          <div className="w-full flex justify-center">
-            <button
-              onClick={handleRestart}
-              className="w-full max-w-lg bg-white border-2 border-indigo-600 text-indigo-600 py-5 px-6 rounded-2xl font-bold hover:bg-indigo-50 transition-colors flex items-center justify-center"
-              style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
-            >
-              Try Again ↺
-            </button>
-          </div>
+          <button onClick={handleRestart} style={styles.button}>Try Again</button>
         </div>
       </div>
     );
   }
 
-  // 3. Quiz Screen (Main)
-  const currentQuestion = quizItems[currentQuestionIndex];
-  
-  if (!currentQuestion) return <div className="p-8 text-center text-xl">Error loading question.</div>;
+  // 3. Quiz
+  if (!currentQuestion) return <div style={styles.container}>Error</div>;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center py-8 px-4 sm:px-6 lg:px-8 font-sans text-center">
-      <div className="w-full max-w-5xl bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-gray-100 min-h-[80vh] flex flex-col justify-center items-center mx-auto space-y-8">
-        
+    <div style={styles.container}>
+      <div style={styles.card}>
         {/* Header */}
-        <div className="w-full flex justify-between items-center text-gray-500 font-medium" style={{ fontSize: 'clamp(0.9rem, 1.5vw, 1.2rem)' }}>
-          <span className="font-bold text-indigo-600">{userName}</span>
+        <div style={{width:'100%', display:'flex', justifyContent:'space-between', color:'#6B7280'}}>
+          <b>{userName}</b>
           <span>{currentQuestionIndex + 1} / {quizItems.length}</span>
         </div>
-
-        {/* Progress Bar */}
-        <div className="w-full bg-gray-200 rounded-full h-3 sm:h-4">
-          <div 
-            className="bg-indigo-600 h-3 sm:h-4 rounded-full transition-all duration-500 ease-out" 
-            style={{ width: `${((currentQuestionIndex + 1) / quizItems.length) * 100}%` }}
-          ></div>
+        
+        {/* Progress */}
+        <div style={styles.progressBar}>
+          <div style={{...styles.progressFill, width: `${((currentQuestionIndex + 1) / quizItems.length) * 100}%`}}></div>
         </div>
 
-        {/* Question Area */}
-        <div className="py-4 space-y-6 flex-grow flex flex-col justify-center items-center w-full">
-          <div className="uppercase tracking-widest text-gray-400 font-bold text-center w-full" style={{ fontSize: 'clamp(0.8rem, 1.5vw, 1.2rem)' }}>
-            {currentQuestion.category}
-          </div>
-          <div className="text-gray-700 font-medium text-center w-full" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)' }}>
-            {currentQuestion.question}
-          </div>
-          <div className="font-bold text-gray-800 text-center bg-indigo-50 py-10 px-4 rounded-2xl border-2 border-indigo-100 shadow-inner w-full flex items-center justify-center flex-wrap gap-2" style={{ fontSize: 'clamp(2rem, 4vw, 4rem)' }}>
+        {/* Question */}
+        <div style={{width:'100%'}}>
+          <p style={{fontSize:'0.9rem', color:'#9CA3AF', textTransform:'uppercase', fontWeight:'bold'}}>{currentQuestion.category}</p>
+          <h3 style={{fontSize:'1.5rem', color:'#374151', margin:'10px 0'}}>{currentQuestion.question}</h3>
+          
+          <div style={styles.koreanBox}>
             {currentQuestion.korean.split(/_+/).map((part, i, arr) => (
-              <span key={i} className="flex items-center">
+              <span key={i}>
                 {part}
                 {i < arr.length - 1 && (
-                  <span className={`inline-flex items-center justify-center min-w-[3ch] border-b-4 px-3 mx-2 transition-all duration-300 ${
-                    selectedOption 
-                      ? (isCorrect ? "text-green-600 border-green-500 bg-green-50 rounded-lg" : "text-red-500 border-red-500 bg-red-50 rounded-lg") 
-                      : "text-indigo-500 border-indigo-300"
-                  }`}>
+                  <span style={{
+                    display: 'inline-block',
+                    minWidth: '50px',
+                    borderBottom: '3px solid #4F46E5',
+                    margin: '0 5px',
+                    color: selectedOption ? (isCorrect ? '#15803D' : '#B91C1C') : '#4F46E5'
+                  }}>
                     {selectedOption || "?"}
                   </span>
                 )}
@@ -285,54 +327,51 @@ export default function Home() {
         </div>
 
         {/* Options */}
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 w-full">
-          {currentQuestion.options.map((option, idx) => (
-            <button
-              key={idx}
-              onClick={() => handleOptionClick(option)}
-              disabled={!!selectedOption}
-              className={`py-6 px-6 rounded-2xl font-bold transition-all duration-200 shadow-sm border-2 flex items-center justify-center text-center
-                ${selectedOption === option 
-                  ? (option === currentQuestion.answer 
-                      ? "bg-green-100 border-green-500 text-green-800 scale-105 shadow-md" 
-                      : "bg-red-100 border-red-500 text-red-800 scale-95 opacity-80")
-                  : (selectedOption && option === currentQuestion.answer 
-                      ? "bg-green-50 border-green-300 text-green-700 opacity-75 ring-2 ring-green-200" // Show correct answer
-                      : "bg-white border-gray-200 text-gray-700 hover:border-indigo-400 hover:shadow-lg hover:-translate-y-1 active:scale-95")
-                }
-              `}
-              style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
-            >
-              {option}
-            </button>
-          ))}
+        <div style={styles.optionGrid}>
+          {currentQuestion.options.map((option, idx) => {
+            let optionStyle = {...styles.optionButton};
+            if (selectedOption === option) {
+              optionStyle = {...optionStyle, ...(isCorrect ? styles.correct : styles.incorrect)};
+            } else if (selectedOption && option === currentQuestion.answer) {
+               optionStyle = {...optionStyle, ...styles.correct, opacity: 0.7};
+            }
+            
+            return (
+              <button
+                key={idx}
+                onClick={() => handleOptionClick(option)}
+                disabled={!!selectedOption}
+                style={optionStyle}
+              >
+                {option}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Feedback / Explanation */}
+        {/* Explanation */}
         {showExplanation && (
-          <div className={`mt-6 p-6 rounded-2xl border-l-8 animate-fade-in shadow-sm w-full ${isCorrect ? "bg-green-50 border-green-500" : "bg-red-50 border-red-500"}`}>
-            <h3 className={`font-bold mb-2 text-center w-full ${isCorrect ? "text-green-800" : "text-red-800"}`} style={{ fontSize: 'clamp(1.2rem, 2vw, 1.8rem)' }}>
+          <div style={{
+            backgroundColor: isCorrect ? '#F0FDF4' : '#FEF2F2',
+            padding: '15px',
+            borderRadius: '12px',
+            borderLeft: `5px solid ${isCorrect ? '#22C55E' : '#EF4444'}`,
+            textAlign: 'left',
+            width: '100%'
+          }}>
+            <strong style={{color: isCorrect ? '#15803D' : '#B91C1C'}}>
               {isCorrect ? "Correct! 🎉" : "Incorrect"}
-            </h3>
-            <p className="text-gray-700 leading-relaxed text-center w-full" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.5rem)' }}>
-              {currentQuestion.explanation}
-            </p>
+            </strong>
+            <p style={{margin:'5px 0', fontSize:'0.95rem', color:'#374151'}}>{currentQuestion.explanation}</p>
           </div>
         )}
 
         {/* Next Button */}
         {selectedOption && (
-          <div className="mt-6 pt-2 w-full flex justify-center">
-            <button
-              onClick={handleNext}
-              className="w-full max-w-lg bg-indigo-600 text-white py-5 px-6 rounded-2xl font-bold shadow-lg hover:bg-indigo-700 hover:shadow-xl hover:-translate-y-1 transition-all focus:outline-none focus:ring-4 focus:ring-indigo-300 animate-bounce-subtle flex items-center justify-center"
-              style={{ fontSize: 'clamp(1.2rem, 2vw, 2rem)' }}
-            >
-              {currentQuestionIndex < quizItems.length - 1 ? "Next Question →" : "Finish Quiz 🏁"}
-            </button>
-          </div>
+          <button onClick={handleNext} style={styles.button}>
+            {currentQuestionIndex < quizItems.length - 1 ? "Next Question →" : "Finish Quiz 🏁"}
+          </button>
         )}
-
       </div>
     </div>
   );
