@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import quizData from "../data/quiz_data.json";
+import Papa from "papaparse";
 
 interface QuizItem {
   id: number;
@@ -13,6 +13,8 @@ interface QuizItem {
   explanation: string;
 }
 
+const SHEET_URL = "https://docs.google.com/spreadsheets/d/1KFYsRXVVS-o_TDN2jifEKgG7wQbitWFQdZ4NHWUh8Ng/gviz/tq?tqx=out:csv&sheet=Sheet1";
+
 export default function Home() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
@@ -20,16 +22,59 @@ export default function Home() {
   const [score, setScore] = useState(0);
   const [showExplanation, setShowExplanation] = useState(false);
   const [quizItems, setQuizItems] = useState<QuizItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    // Load data and shuffle if needed, for now just load directly
-    setQuizItems(quizData);
+    const fetchQuizData = async () => {
+      try {
+        const response = await fetch(SHEET_URL);
+        if (!response.ok) throw new Error("Failed to fetch data");
+        
+        const csvText = await response.text();
+        
+        Papa.parse(csvText, {
+          header: true,
+          skipEmptyLines: true,
+          complete: (results) => {
+            const parsedData = results.data.map((row: any, index: number) => ({
+              id: index + 1,
+              category: row.category,
+              question: row.question,
+              korean: row.korean,
+              answer: row.answer,
+              // Handle comma-separated options string or array
+              options: row.options ? row.options.split(",").map((opt: string) => opt.trim()) : [],
+              explanation: row.explanation
+            })).filter((item: QuizItem) => item.question && item.answer && item.options.length > 0);
+
+            if (parsedData.length === 0) {
+              setError("No quiz data found in the spreadsheet.");
+            } else {
+              setQuizItems(parsedData);
+            }
+            setLoading(false);
+          },
+          error: (err: any) => {
+            console.error("CSV Parse Error:", err);
+            setError("Failed to parse quiz data.");
+            setLoading(false);
+          }
+        });
+      } catch (err) {
+        console.error("Fetch Error:", err);
+        setError("Failed to load quiz data from Google Sheets.");
+        setLoading(false);
+      }
+    };
+
+    fetchQuizData();
   }, []);
 
   const currentQuestion = quizItems[currentQuestionIndex];
 
   const handleOptionClick = (option: string) => {
-    if (selectedOption) return; // Prevent changing answer
+    if (selectedOption) return;
 
     setSelectedOption(option);
     const correct = option === currentQuestion.answer;
@@ -53,7 +98,19 @@ export default function Home() {
     }
   };
 
-  if (!currentQuestion) return <div className="p-8 text-center">Loading...</div>;
+  if (loading) return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-indigo-500"></div>
+    </div>
+  );
+
+  if (error) return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 text-red-500 font-bold p-4 text-center">
+      Error: {error}
+    </div>
+  );
+
+  if (!currentQuestion) return <div className="p-8 text-center">No questions available.</div>;
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8 font-sans">
@@ -82,10 +139,10 @@ export default function Home() {
             {currentQuestion.question}
           </div>
           <div className="text-2xl font-bold text-gray-800 text-center bg-indigo-50 py-4 rounded-lg border border-indigo-100">
-            {currentQuestion.korean.split("___").map((part, i) => (
+            {currentQuestion.korean.split(/_+/).map((part, i, arr) => (
               <span key={i}>
                 {part}
-                {i === 0 && (
+                {i < arr.length - 1 && (
                   <span className={`inline-block min-w-[3rem] border-b-2 px-1 text-center mx-1 transition-colors ${
                     selectedOption 
                       ? (isCorrect ? "text-green-600 border-green-500" : "text-red-500 border-red-500") 
@@ -101,9 +158,9 @@ export default function Home() {
 
         {/* Options */}
         <div className="grid grid-cols-2 gap-3">
-          {currentQuestion.options.map((option) => (
+          {currentQuestion.options.map((option, idx) => (
             <button
-              key={option}
+              key={idx}
               onClick={() => handleOptionClick(option)}
               disabled={!!selectedOption}
               className={`py-3 px-4 rounded-lg text-lg font-medium transition-all duration-200 shadow-sm border-2 
