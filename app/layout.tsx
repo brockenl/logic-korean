@@ -1,3 +1,4 @@
+import "./globals.css";
 export const metadata = {
   title: 'Logic Korean',
   description: 'Learn Korean grammar with logic.',
