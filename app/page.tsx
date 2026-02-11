@@ -46,7 +46,6 @@ export default function Home() {
           header: true,
           skipEmptyLines: true,
           complete: (results) => {
-            // 데이터 파싱 및 가공
             const parsedData = results.data.map((row: any, index: number) => ({
               id: index + 1,
               category: row.category,
@@ -60,7 +59,6 @@ export default function Home() {
             if (parsedData.length === 0) {
               setError("No quiz data found.");
             } else {
-              // 랜덤 섞기
               const shuffled = parsedData.sort(() => 0.5 - Math.random());
               setQuizItems(shuffled.slice(0, 20));
             }
@@ -104,7 +102,7 @@ export default function Home() {
     setShowExplanation(false);
 
     if (currentQuestionIndex < quizItems.length - 1) {
-setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
       finishQuiz();
     }
@@ -113,7 +111,7 @@ setCurrentQuestionIndex(currentQuestionIndex + 1);
   const finishQuiz = async () => {
     setStep("result");
     try {
-        await fetch(SCORE_API_URL, {
+await fetch(SCORE_API_URL, {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "application/json" },
@@ -127,7 +125,6 @@ setCurrentQuestionIndex(currentQuestionIndex + 1);
   // --- 화면 렌더링 (UI) ---
 return
 (
-    // [중요] 중앙 정렬을 위한 Tailwind 클래스 적용
     <main className="flex min-h-screen flex-col items-center justify-center p-4 bg-gray-50 text-gray-900 font-sans">
       
       {loading && <p className="text-xl font-bold text-blue-600 animate-pulse">Loading Quiz...</p>}
@@ -205,9 +202,8 @@ return
               {/* 해설 및 다음 버튼 */}
               {showExplanation && (
                 <div className="animate-fade-in">
-                  <div className="bg-blue-50 p-5 rounded-xl border border-blue-
-100 text-sm mb-4">
-                    <p className="font-bold text-blue-900 mb-1">💡 Logic Explanation</p>
+                  <div className="bg-blue-50 p-5 rounded-xl border border-blue-100 text-sm mb-4">
+<p className="font-bold text-blue-900 mb-1">💡 Logic Explanation</p>
                     <p className="text-blue-800 leading-relaxed">{quizItems[currentQuestionIndex].explanation}</p>
                   </div>
                   
